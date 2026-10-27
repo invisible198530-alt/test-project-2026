@@ -32,6 +32,7 @@
 .yoga-cost .yc-plan-price { font-size:21px; margin-top:25px; }
 .yoga-cost .yc-unit { font-size:10px; color:var(--yc-muted); margin-top:3px; }
 .yoga-cost .yc-saving-tag { align-self:flex-start; color:var(--yc-green); font-size:10px; background:#dfe9d6; padding:3px 7px; border-radius:5px; margin-top:12px; }
+.yoga-cost .yc-popular-tag { align-self:flex-start; font-size:10px; color:white; background:var(--yc-green); padding:3px 7px; border-radius:5px; margin-top:8px; }
 .yoga-cost .yc-benefits { display:flex; flex-wrap:wrap; gap:12px 22px; font-size:11px; color:var(--yc-muted); margin-top:22px; }
 .yoga-cost .yc-note { display:flex; gap:16px; align-items:center; border-top:1px solid #e0e5d9; margin-top:30px; padding-top:23px; }
 .yoga-cost .yc-note-symbol { font-size:40px; color:#8d9f7b; }
@@ -39,13 +40,13 @@
 .yoga-cost .yc-note strong { font-weight:400; color:var(--yc-ink); }
 .yoga-cost .yc-summary { background:#eef1e8; padding:26px; border-radius:18px; border:1px solid #e1e6d9; }
 .yoga-cost .yc-selected { font-size:12px; margin:27px 0 7px; color:var(--yc-green); }
-.yoga-cost .yc-total { font-family:Georgia,serif; font-size:46px; line-height:1.2; letter-spacing:-1px; font-variant-numeric:tabular-nums; }
+.yoga-cost .yc-total { font-family:Georgia,serif; font-size:57.5px; line-height:1.2; letter-spacing:-1px; font-variant-numeric:tabular-nums; }
 .yoga-cost .yc-total-caption { color:var(--yc-muted); font-size:11px; margin:6px 0 25px; }
 .yoga-cost .yc-breakdown, .yoga-cost .yc-discount { display:flex; justify-content:space-between; gap:10px; font-size:11px; padding:12px 0; border-top:1px solid #dce2d3; }
 .yoga-cost .yc-breakdown { color:var(--yc-muted); }
 .yoga-cost .yc-discount { color:var(--yc-green); }
-.yoga-cost .yc-submit { display:flex; justify-content:space-between; width:100%; margin-top:18px; border:0; border-radius:8px; padding:16px 18px; background:var(--yc-green); color:white; font:inherit; font-size:13px; cursor:pointer; transition:background .2s,transform .2s; }
-.yoga-cost .yc-submit:hover { background:#264b33; transform:translateY(-2px); }
+.yoga-cost .yc-submit { display:flex; justify-content:space-between; width:100%; margin-top:18px; border:0; border-radius:8px; padding:16px 18px; background:#FF8500; color:white; font:inherit; font-size:13px; cursor:pointer; transition:background .2s,transform .2s; }
+.yoga-cost .yc-submit:hover { background:#FF8500; transform:translateY(-2px); }
 .yoga-cost .yc-submit:focus-visible, .yoga-cost .yc-brand:focus-visible { outline:3px solid #87a47c; outline-offset:4px; }
 .yoga-cost .yc-submit-note { text-align:center; font-size:10px; color:var(--yc-muted); margin:12px 0 0; }
 .yoga-cost .yc-message { margin:16px 0 0; font-size:12px; line-height:1.7; }
