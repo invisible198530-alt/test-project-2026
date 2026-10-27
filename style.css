@@ -1,0 +1,59 @@
+/* Изолированные стили: не затрагивают другие блоки, в том числе в Tilda. */
+.yoga-cost, .yoga-cost * { box-sizing: border-box; }
+.yoga-cost { --yc-green:#355c42; --yc-ink:#26392e; --yc-muted:#747c71; margin:0; background:#f8f9f3; color:var(--yc-ink); font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.5; padding:0 clamp(20px,6vw,96px); min-height:100vh; }
+.yoga-cost .yc-header { display:flex; justify-content:space-between; align-items:center; padding:30px 0; border-bottom:1px solid #e0e5d9; gap:20px; }
+.yoga-cost .yc-brand { display:flex; align-items:center; flex-wrap:wrap; gap:10px; color:var(--yc-green); text-decoration:none; font-size:30px; font-weight:600; letter-spacing:-1px; }
+.yoga-cost .yc-mark { font-size:36px; font-weight:400; }
+.yoga-cost .yc-brand-note { font-size:11px; letter-spacing:0; font-weight:400; margin-left:16px; color:var(--yc-muted); }
+.yoga-cost .yc-header-note { color:var(--yc-muted); font-size:12px; }
+.yoga-cost .yc-main { max-width:1200px; margin:auto; padding:58px 0 55px; }
+.yoga-cost .yc-intro { margin-bottom:43px; }
+.yoga-cost .yc-eyebrow { font-size:10px; letter-spacing:2.3px; color:var(--yc-green); }
+.yoga-cost .yc-title { font-family:Georgia,'Times New Roman',serif; font-size:clamp(42px,5.3vw,72px); font-weight:400; line-height:1.05; letter-spacing:-2px; margin:19px 0 23px; }
+.yoga-cost .yc-lead { font-size:15px; line-height:1.8; color:var(--yc-muted); margin:0; }
+.yoga-cost .yc-layout { display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:38px; align-items:start; }
+.yoga-cost .yc-step { display:flex; align-items:center; gap:11px; margin-bottom:22px; }
+.yoga-cost .yc-step-number { font-size:10px; color:var(--yc-muted); border:1px solid #d4dccb; border-radius:50%; width:25px; height:25px; display:grid; place-items:center; }
+.yoga-cost .yc-heading { font-size:16px; font-weight:500; margin:0; }
+.yoga-cost .yc-fieldset { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; padding:0; margin:0; border:0; min-width:0; }
+.yoga-cost .yc-plan { position:relative; display:block; cursor:pointer; min-width:0; }
+.yoga-cost .yc-plan input, .yoga-cost .yc-sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+.yoga-cost .yc-plan-body { display:flex; flex-direction:column; min-height:260px; border:1px solid #dce1d5; border-radius:14px; padding:22px 17px 18px; background:#fcfcf8; transition:background .25s,border-color .25s,box-shadow .25s,transform .25s; }
+.yoga-cost .yc-plan:hover .yc-plan-body { border-color:#7f9c7d; transform:translateY(-3px); }
+.yoga-cost .yc-plan input:checked + .yc-plan-body { border-color:var(--yc-green); background:#eaf0e3; box-shadow:inset 0 0 0 1px var(--yc-green); }
+.yoga-cost .yc-plan input:focus-visible + .yc-plan-body { outline:3px solid #87a47c; outline-offset:4px; }
+.yoga-cost .yc-plan-top { display:flex; justify-content:space-between; align-items:center; gap:5px; }
+.yoga-cost .yc-plan-name { font-size:12px; }
+.yoga-cost .yc-radio { width:16px; height:16px; border:1px solid #c6cdbd; border-radius:50%; flex-shrink:0; }
+.yoga-cost .yc-plan input:checked + .yc-plan-body .yc-radio { background:var(--yc-green); border:4px solid #eaf0e3; outline:1px solid var(--yc-green); }
+.yoga-cost .yc-count { font-family:Georgia,serif; font-size:48px; line-height:1.2; margin-top:22px; white-space:nowrap; }
+.yoga-cost .yc-count span { font-family:Arial,sans-serif; font-size:13px; }
+.yoga-cost .yc-plan-desc { font-size:10px; color:var(--yc-muted); margin-top:5px; }
+.yoga-cost .yc-plan-price { font-size:21px; margin-top:25px; }
+.yoga-cost .yc-unit { font-size:10px; color:var(--yc-muted); margin-top:3px; }
+.yoga-cost .yc-saving-tag { align-self:flex-start; color:var(--yc-green); font-size:10px; background:#dfe9d6; padding:3px 7px; border-radius:5px; margin-top:12px; }
+.yoga-cost .yc-benefits { display:flex; flex-wrap:wrap; gap:12px 22px; font-size:11px; color:var(--yc-muted); margin-top:22px; }
+.yoga-cost .yc-note { display:flex; gap:16px; align-items:center; border-top:1px solid #e0e5d9; margin-top:30px; padding-top:23px; }
+.yoga-cost .yc-note-symbol { font-size:40px; color:#8d9f7b; }
+.yoga-cost .yc-note p { font-size:12px; color:var(--yc-muted); margin:0; line-height:1.8; }
+.yoga-cost .yc-note strong { font-weight:400; color:var(--yc-ink); }
+.yoga-cost .yc-summary { background:#eef1e8; padding:26px; border-radius:18px; border:1px solid #e1e6d9; }
+.yoga-cost .yc-selected { font-size:12px; margin:27px 0 7px; color:var(--yc-green); }
+.yoga-cost .yc-total { font-family:Georgia,serif; font-size:46px; line-height:1.2; letter-spacing:-1px; font-variant-numeric:tabular-nums; }
+.yoga-cost .yc-total-caption { color:var(--yc-muted); font-size:11px; margin:6px 0 25px; }
+.yoga-cost .yc-breakdown, .yoga-cost .yc-discount { display:flex; justify-content:space-between; gap:10px; font-size:11px; padding:12px 0; border-top:1px solid #dce2d3; }
+.yoga-cost .yc-breakdown { color:var(--yc-muted); }
+.yoga-cost .yc-discount { color:var(--yc-green); }
+.yoga-cost .yc-submit { display:flex; justify-content:space-between; width:100%; margin-top:18px; border:0; border-radius:8px; padding:16px 18px; background:var(--yc-green); color:white; font:inherit; font-size:13px; cursor:pointer; transition:background .2s,transform .2s; }
+.yoga-cost .yc-submit:hover { background:#264b33; transform:translateY(-2px); }
+.yoga-cost .yc-submit:focus-visible, .yoga-cost .yc-brand:focus-visible { outline:3px solid #87a47c; outline-offset:4px; }
+.yoga-cost .yc-submit-note { text-align:center; font-size:10px; color:var(--yc-muted); margin:12px 0 0; }
+.yoga-cost .yc-message { margin:16px 0 0; font-size:12px; line-height:1.7; }
+.yoga-cost [hidden] { display:none !important; }
+.yoga-cost .yc-footer { border-top:1px solid #e0e5d9; padding:23px 0; display:flex; justify-content:space-between; gap:15px; font-size:10px; color:var(--yc-muted); }
+.yoga-cost .yc-footer span span { margin-left:8px; color:var(--yc-green); }
+/* Адаптивная компоновка и уважение системной настройки анимации. */
+@media (max-width:1000px) { .yoga-cost .yc-layout { grid-template-columns:minmax(0,1fr) 280px; gap:20px; } .yoga-cost .yc-plan-body { padding:18px 12px; } }
+@media (max-width:800px) { .yoga-cost .yc-layout { grid-template-columns:1fr; gap:28px; } .yoga-cost .yc-summary { max-width:none; } .yoga-cost .yc-header-note { display:none; } .yoga-cost .yc-main { padding-top:38px; } }
+@media (max-width:480px) { .yoga-cost .yc-brand-note { margin-left:5px; font-size:10px; } .yoga-cost .yc-fieldset { grid-template-columns:1fr; gap:12px; } .yoga-cost .yc-plan-body { min-height:0; padding:20px; } .yoga-cost .yc-count { margin-top:10px; font-size:38px; } .yoga-cost .yc-plan-price { margin-top:15px; } .yoga-cost .yc-footer { flex-direction:column; gap:6px; } .yoga-cost .yc-lead br { display:none; } }
+@media (prefers-reduced-motion:reduce) { .yoga-cost .yc-plan-body, .yoga-cost .yc-submit { transition:none; } }

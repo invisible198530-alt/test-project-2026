@@ -1,0 +1,136 @@
+<!-- Вставьте весь фрагмент в HTML-блок T123. Внешние файлы не нужны. -->
+<style>
+/* Изолированные стили: не затрагивают другие блоки, в том числе в Tilda. */
+.yoga-cost, .yoga-cost * { box-sizing: border-box; }
+.yoga-cost { --yc-green:#355c42; --yc-ink:#26392e; --yc-muted:#747c71; margin:0; background:#f8f9f3; color:var(--yc-ink); font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.5; padding:0 clamp(20px,6vw,96px); min-height:100vh; }
+.yoga-cost .yc-header { display:flex; justify-content:space-between; align-items:center; padding:30px 0; border-bottom:1px solid #e0e5d9; gap:20px; }
+.yoga-cost .yc-brand { display:flex; align-items:center; flex-wrap:wrap; gap:10px; color:var(--yc-green); text-decoration:none; font-size:30px; font-weight:600; letter-spacing:-1px; }
+.yoga-cost .yc-mark { font-size:36px; font-weight:400; }
+.yoga-cost .yc-brand-note { font-size:11px; letter-spacing:0; font-weight:400; margin-left:16px; color:var(--yc-muted); }
+.yoga-cost .yc-header-note { color:var(--yc-muted); font-size:12px; }
+.yoga-cost .yc-main { max-width:1200px; margin:auto; padding:58px 0 55px; }
+.yoga-cost .yc-intro { margin-bottom:43px; }
+.yoga-cost .yc-eyebrow { font-size:10px; letter-spacing:2.3px; color:var(--yc-green); }
+.yoga-cost .yc-title { font-family:Georgia,'Times New Roman',serif; font-size:clamp(42px,5.3vw,72px); font-weight:400; line-height:1.05; letter-spacing:-2px; margin:19px 0 23px; }
+.yoga-cost .yc-lead { font-size:15px; line-height:1.8; color:var(--yc-muted); margin:0; }
+.yoga-cost .yc-layout { display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:38px; align-items:start; }
+.yoga-cost .yc-step { display:flex; align-items:center; gap:11px; margin-bottom:22px; }
+.yoga-cost .yc-step-number { font-size:10px; color:var(--yc-muted); border:1px solid #d4dccb; border-radius:50%; width:25px; height:25px; display:grid; place-items:center; }
+.yoga-cost .yc-heading { font-size:16px; font-weight:500; margin:0; }
+.yoga-cost .yc-fieldset { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; padding:0; margin:0; border:0; min-width:0; }
+.yoga-cost .yc-plan { position:relative; display:block; cursor:pointer; min-width:0; }
+.yoga-cost .yc-plan input, .yoga-cost .yc-sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+.yoga-cost .yc-plan-body { display:flex; flex-direction:column; min-height:260px; border:1px solid #dce1d5; border-radius:14px; padding:22px 17px 18px; background:#fcfcf8; transition:background .25s,border-color .25s,box-shadow .25s,transform .25s; }
+.yoga-cost .yc-plan:hover .yc-plan-body { border-color:#7f9c7d; transform:translateY(-3px); }
+.yoga-cost .yc-plan input:checked + .yc-plan-body { border-color:var(--yc-green); background:#eaf0e3; box-shadow:inset 0 0 0 1px var(--yc-green); }
+.yoga-cost .yc-plan input:focus-visible + .yc-plan-body { outline:3px solid #87a47c; outline-offset:4px; }
+.yoga-cost .yc-plan-top { display:flex; justify-content:space-between; align-items:center; gap:5px; }
+.yoga-cost .yc-plan-name { font-size:12px; }
+.yoga-cost .yc-radio { width:16px; height:16px; border:1px solid #c6cdbd; border-radius:50%; flex-shrink:0; }
+.yoga-cost .yc-plan input:checked + .yc-plan-body .yc-radio { background:var(--yc-green); border:4px solid #eaf0e3; outline:1px solid var(--yc-green); }
+.yoga-cost .yc-count { font-family:Georgia,serif; font-size:48px; line-height:1.2; margin-top:22px; white-space:nowrap; }
+.yoga-cost .yc-count span { font-family:Arial,sans-serif; font-size:13px; }
+.yoga-cost .yc-plan-desc { font-size:10px; color:var(--yc-muted); margin-top:5px; }
+.yoga-cost .yc-plan-price { font-size:21px; margin-top:25px; }
+.yoga-cost .yc-unit { font-size:10px; color:var(--yc-muted); margin-top:3px; }
+.yoga-cost .yc-saving-tag { align-self:flex-start; color:var(--yc-green); font-size:10px; background:#dfe9d6; padding:3px 7px; border-radius:5px; margin-top:12px; }
+.yoga-cost .yc-benefits { display:flex; flex-wrap:wrap; gap:12px 22px; font-size:11px; color:var(--yc-muted); margin-top:22px; }
+.yoga-cost .yc-note { display:flex; gap:16px; align-items:center; border-top:1px solid #e0e5d9; margin-top:30px; padding-top:23px; }
+.yoga-cost .yc-note-symbol { font-size:40px; color:#8d9f7b; }
+.yoga-cost .yc-note p { font-size:12px; color:var(--yc-muted); margin:0; line-height:1.8; }
+.yoga-cost .yc-note strong { font-weight:400; color:var(--yc-ink); }
+.yoga-cost .yc-summary { background:#eef1e8; padding:26px; border-radius:18px; border:1px solid #e1e6d9; }
+.yoga-cost .yc-selected { font-size:12px; margin:27px 0 7px; color:var(--yc-green); }
+.yoga-cost .yc-total { font-family:Georgia,serif; font-size:46px; line-height:1.2; letter-spacing:-1px; font-variant-numeric:tabular-nums; }
+.yoga-cost .yc-total-caption { color:var(--yc-muted); font-size:11px; margin:6px 0 25px; }
+.yoga-cost .yc-breakdown, .yoga-cost .yc-discount { display:flex; justify-content:space-between; gap:10px; font-size:11px; padding:12px 0; border-top:1px solid #dce2d3; }
+.yoga-cost .yc-breakdown { color:var(--yc-muted); }
+.yoga-cost .yc-discount { color:var(--yc-green); }
+.yoga-cost .yc-submit { display:flex; justify-content:space-between; width:100%; margin-top:18px; border:0; border-radius:8px; padding:16px 18px; background:var(--yc-green); color:white; font:inherit; font-size:13px; cursor:pointer; transition:background .2s,transform .2s; }
+.yoga-cost .yc-submit:hover { background:#264b33; transform:translateY(-2px); }
+.yoga-cost .yc-submit:focus-visible, .yoga-cost .yc-brand:focus-visible { outline:3px solid #87a47c; outline-offset:4px; }
+.yoga-cost .yc-submit-note { text-align:center; font-size:10px; color:var(--yc-muted); margin:12px 0 0; }
+.yoga-cost .yc-message { margin:16px 0 0; font-size:12px; line-height:1.7; }
+.yoga-cost [hidden] { display:none !important; }
+.yoga-cost .yc-footer { border-top:1px solid #e0e5d9; padding:23px 0; display:flex; justify-content:space-between; gap:15px; font-size:10px; color:var(--yc-muted); }
+.yoga-cost .yc-footer span span { margin-left:8px; color:var(--yc-green); }
+/* Адаптивная компоновка и уважение системной настройки анимации. */
+@media (max-width:1000px) { .yoga-cost .yc-layout { grid-template-columns:minmax(0,1fr) 280px; gap:20px; } .yoga-cost .yc-plan-body { padding:18px 12px; } }
+@media (max-width:800px) { .yoga-cost .yc-layout { grid-template-columns:1fr; gap:28px; } .yoga-cost .yc-summary { max-width:none; } .yoga-cost .yc-header-note { display:none; } .yoga-cost .yc-main { padding-top:38px; } }
+@media (max-width:480px) { .yoga-cost .yc-brand-note { margin-left:5px; font-size:10px; } .yoga-cost .yc-fieldset { grid-template-columns:1fr; gap:12px; } .yoga-cost .yc-plan-body { min-height:0; padding:20px; } .yoga-cost .yc-count { margin-top:10px; font-size:38px; } .yoga-cost .yc-plan-price { margin-top:15px; } .yoga-cost .yc-footer { flex-direction:column; gap:6px; } .yoga-cost .yc-lead br { display:none; } }
+@media (prefers-reduced-motion:reduce) { .yoga-cost .yc-plan-body, .yoga-cost .yc-submit { transition:none; } }
+</style>
+<!-- Калькулятор: все элементы и стили ограничены контейнером .yoga-cost. -->
+<section class="yoga-cost" aria-label="Калькулятор стоимости занятий йогой">
+  <header class="yc-header"><a class="yc-brand" href="#yoga-plans" aria-label="Тихо — онлайн-студия йоги"><span class="yc-mark" aria-hidden="true">✳</span> тихо<span class="yc-brand-note">онлайн-студия йоги</span></a><span class="yc-header-note">Вдох. Выдох. Время для себя.</span></header>
+  <main class="yc-main">
+    <div class="yc-intro"><span class="yc-eyebrow">ПРАКТИКА В ВАШЕМ РИТМЕ</span><h1 class="yc-title">Больше баланса.<br>Ближе к себе.</h1><p class="yc-lead">Начните с одного занятия или выберите абонемент.<br>А мы поможем найти вашу точку равновесия.</p></div>
+    <div class="yc-layout" id="yoga-plans">
+      <div class="yc-options">
+        <div class="yc-step"><span class="yc-step-number">01</span><h2 class="yc-heading">Выберите свой ритм</h2></div>
+        <!-- Нативные радиокнопки поддерживают Tab, стрелки и пробел. -->
+        <fieldset class="yc-fieldset"><legend class="yc-sr">Количество занятий</legend>
+          <label class="yc-plan"><input type="radio" name="yoga-plan" value="1"><span class="yc-plan-body"><span class="yc-plan-top"><span class="yc-plan-name">Знакомство</span><span class="yc-radio" aria-hidden="true"></span></span><span class="yc-count">1 <span>занятие</span></span><span class="yc-plan-desc">Первый шаг к себе</span><span class="yc-plan-price">1 000 ₽</span><span class="yc-unit">1 000 ₽ / занятие</span></span></label>
+          <label class="yc-plan"><input type="radio" name="yoga-plan" value="4" checked><span class="yc-plan-body"><span class="yc-plan-top"><span class="yc-plan-name">Баланс</span><span class="yc-radio" aria-hidden="true"></span></span><span class="yc-count">4 <span>занятия</span></span><span class="yc-plan-desc">Место для новой привычки</span><span class="yc-plan-price">3 990 ₽</span><span class="yc-unit">997,50 ₽ / занятие</span><span class="yc-saving-tag">Экономия 10 ₽</span></span></label>
+          <label class="yc-plan"><input type="radio" name="yoga-plan" value="8"><span class="yc-plan-body"><span class="yc-plan-top"><span class="yc-plan-name">Гармония</span><span class="yc-radio" aria-hidden="true"></span></span><span class="yc-count">8 <span>занятий</span></span><span class="yc-plan-desc">Больше заботы о себе</span><span class="yc-plan-price">7 490 ₽</span><span class="yc-unit">936,25 ₽ / занятие</span><span class="yc-saving-tag">Экономия 510 ₽</span></span></label>
+        </fieldset>
+        <div class="yc-benefits"><span>✓ Занятия онлайн</span><span>✓ Для любого уровня</span><span>✓ Из любимого места</span></div>
+        <div class="yc-note"><span class="yc-note-symbol" aria-hidden="true">☼</span><p>Не нужно быть гибким, чтобы начать.<br><strong>Достаточно быть здесь.</strong></p></div>
+      </div>
+      <!-- Итог обновляется автоматически и объявляется экранным диктором. -->
+      <aside class="yc-summary" aria-label="Ваш выбор"><div class="yc-step"><span class="yc-step-number">02</span><h2 class="yc-heading">Ваша практика</h2></div><div class="yc-live" aria-live="polite" aria-atomic="true"><p class="yc-selected" data-selected>Баланс · 4 занятия</p><div class="yc-total" data-total>3 990 ₽</div><p class="yc-total-caption">итоговая стоимость</p><div class="yc-breakdown"><span data-breakdown>4 занятия × 1 000 ₽</span><span data-base>4 000 ₽</span></div><div class="yc-discount" data-discount-row><span>Ваша экономия</span><strong data-discount>10 ₽</strong></div></div><button class="yc-submit" type="button">Записаться <span aria-hidden="true">↗</span></button><p class="yc-submit-note">Начните с заботы о себе</p><p class="yc-message" role="status" hidden></p></aside>
+    </div>
+    <noscript><p class="yc-nojs">Включите JavaScript, чтобы переключать тарифы и записаться.</p></noscript>
+  </main>
+  <footer class="yc-footer"><span>Маленькая пауза. Большие перемены.</span><span>С заботой о вашем равновесии <span aria-hidden="true">✳</span></span></footer>
+</section>
+<script>
+/* Закрытая область видимости: не добавляем переменные в window. */
+(() => {
+  'use strict';
+  const plans = {
+    1: { name: 'Знакомство', count: 1, label: '1 занятие', price: 1000 },
+    4: { name: 'Баланс', count: 4, label: '4 занятия', price: 3990 },
+    8: { name: 'Гармония', count: 8, label: '8 занятий', price: 7490 }
+  };
+  const money = value => new Intl.NumberFormat('ru-RU').format(value) + ' ₽';
+  // Поддерживаем несколько независимых блоков T123 на одной странице.
+  document.querySelectorAll('.yoga-cost').forEach(root => {
+    if (root.dataset.initialized === 'true') return;
+    root.dataset.initialized = 'true';
+    const find = selector => root.querySelector(selector);
+    const inputs = root.querySelectorAll('input[type="radio"]');
+    // Уникальное имя группы не даёт радиокнопкам разных блоков влиять друг на друга.
+    const group = 'yoga-plan-' + Math.random().toString(36).slice(2);
+    inputs.forEach(input => { input.name = group; });
+    let selected;
+    let animation;
+    const render = () => {
+      selected = plans[find('input:checked').value];
+      const base = selected.count * plans[1].price;
+      const saving = base - selected.price;
+      find('[data-selected]').textContent = selected.name + ' · ' + selected.label;
+      find('[data-total]').textContent = money(selected.price);
+      find('[data-breakdown]').textContent = selected.label + ' × ' + money(plans[1].price);
+      find('[data-base]').textContent = money(base);
+      find('[data-discount]').textContent = money(saving);
+      find('[data-discount-row]').hidden = saving === 0;
+      find('.yc-message').hidden = true;
+      // Сумма меняется сразу; анимация только мягко подчёркивает обновление.
+      const total = find('[data-total]');
+      if (animation) animation.cancel();
+      if (typeof total.animate === 'function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        animation = total.animate([{ opacity: 0.35, transform: 'translateY(4px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 240, easing: 'ease-out' });
+      }
+    };
+    inputs.forEach(input => input.addEventListener('change', render));
+    // Демонстрационная запись: показываем выбор, не отправляя данные.
+    find('.yc-submit').addEventListener('click', () => {
+      const message = find('.yc-message');
+      message.textContent = 'Вы выбрали «' + selected.name + '»: ' + selected.label + ' за ' + money(selected.price) + '. Это демонстрация — заявка пока не отправляется.';
+      message.hidden = false;
+    });
+    render();
+  });
+})();
+</script>

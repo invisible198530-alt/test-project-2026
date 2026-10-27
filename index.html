@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Выберите свой ритм практики в онлайн-студии йоги Тихо. Рассчитайте стоимость занятий и экономию по абонементу.">
+  <title>Тихо — стоимость занятий йогой</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body style="margin:0">
+<!-- Калькулятор: все элементы и стили ограничены контейнером .yoga-cost. -->
+<section class="yoga-cost" aria-label="Калькулятор стоимости занятий йогой">
+  <header class="yc-header"><a class="yc-brand" href="#yoga-plans" aria-label="Тихо — онлайн-студия йоги"><span class="yc-mark" aria-hidden="true">✳</span> тихо<span class="yc-brand-note">онлайн-студия йоги</span></a><span class="yc-header-note">Вдох. Выдох. Время для себя.</span></header>
+  <main class="yc-main">
+    <div class="yc-intro"><span class="yc-eyebrow">ПРАКТИКА В ВАШЕМ РИТМЕ</span><h1 class="yc-title">Больше баланса.<br>Ближе к себе.</h1><p class="yc-lead">Начните с одного занятия или выберите абонемент.<br>А мы поможем найти вашу точку равновесия.</p></div>
+    <div class="yc-layout" id="yoga-plans">
+      <div class="yc-options">
+        <div class="yc-step"><span class="yc-step-number">01</span><h2 class="yc-heading">Выберите свой ритм</h2></div>
+        <!-- Нативные радиокнопки поддерживают Tab, стрелки и пробел. -->
+        <fieldset class="yc-fieldset"><legend class="yc-sr">Количество занятий</legend>
+          <label class="yc-plan"><input type="radio" name="yoga-plan" value="1"><span class="yc-plan-body"><span class="yc-plan-top"><span class="yc-plan-name">Знакомство</span><span class="yc-radio" aria-hidden="true"></span></span><span class="yc-count">1 <span>занятие</span></span><span class="yc-plan-desc">Первый шаг к себе</span><span class="yc-plan-price">1 000 ₽</span><span class="yc-unit">1 000 ₽ / занятие</span></span></label>
+          <label class="yc-plan"><input type="radio" name="yoga-plan" value="4" checked><span class="yc-plan-body"><span class="yc-plan-top"><span class="yc-plan-name">Баланс</span><span class="yc-radio" aria-hidden="true"></span></span><span class="yc-count">4 <span>занятия</span></span><span class="yc-plan-desc">Место для новой привычки</span><span class="yc-plan-price">3 990 ₽</span><span class="yc-unit">997,50 ₽ / занятие</span><span class="yc-saving-tag">Экономия 10 ₽</span></span></label>
+          <label class="yc-plan"><input type="radio" name="yoga-plan" value="8"><span class="yc-plan-body"><span class="yc-plan-top"><span class="yc-plan-name">Гармония</span><span class="yc-radio" aria-hidden="true"></span></span><span class="yc-count">8 <span>занятий</span></span><span class="yc-plan-desc">Больше заботы о себе</span><span class="yc-plan-price">7 490 ₽</span><span class="yc-unit">936,25 ₽ / занятие</span><span class="yc-saving-tag">Экономия 510 ₽</span></span></label>
+        </fieldset>
+        <div class="yc-benefits"><span>✓ Занятия онлайн</span><span>✓ Для любого уровня</span><span>✓ Из любимого места</span></div>
+        <div class="yc-note"><span class="yc-note-symbol" aria-hidden="true">☼</span><p>Не нужно быть гибким, чтобы начать.<br><strong>Достаточно быть здесь.</strong></p></div>
+      </div>
+      <!-- Итог обновляется автоматически и объявляется экранным диктором. -->
+      <aside class="yc-summary" aria-label="Ваш выбор"><div class="yc-step"><span class="yc-step-number">02</span><h2 class="yc-heading">Ваша практика</h2></div><div class="yc-live" aria-live="polite" aria-atomic="true"><p class="yc-selected" data-selected>Баланс · 4 занятия</p><div class="yc-total" data-total>3 990 ₽</div><p class="yc-total-caption">итоговая стоимость</p><div class="yc-breakdown"><span data-breakdown>4 занятия × 1 000 ₽</span><span data-base>4 000 ₽</span></div><div class="yc-discount" data-discount-row><span>Ваша экономия</span><strong data-discount>10 ₽</strong></div></div><button class="yc-submit" type="button">Записаться <span aria-hidden="true">↗</span></button><p class="yc-submit-note">Начните с заботы о себе</p><p class="yc-message" role="status" hidden></p></aside>
+    </div>
+    <noscript><p class="yc-nojs">Включите JavaScript, чтобы переключать тарифы и записаться.</p></noscript>
+  </main>
+  <footer class="yc-footer"><span>Маленькая пауза. Большие перемены.</span><span>С заботой о вашем равновесии <span aria-hidden="true">✳</span></span></footer>
+</section>
+</body>
+</html>
