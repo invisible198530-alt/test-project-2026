@@ -106,6 +106,32 @@
     inputs.forEach(input => { input.name = group; });
     let selected;
     let animation;
+    let pendingScroll = false;
+    // Привязка только к согласованному блоку: другие формы не затрагиваются.
+    const fieldSelector = '#rec5252905801 input[name="selected_plan"]';
+    const syncForm = () => {
+      if (!selected) return false;
+      const block = document.getElementById('rec5252905801');
+      const field = document.querySelector(fieldSelector);
+      const form = field && field.closest('form');
+      if (!block || !field || field.type !== 'hidden' || !form || !block.contains(form)) return false;
+      const value = selected.name + ' · ' + selected.label + ' · ' + money(selected.price);
+      // Проверка значения предотвращает повторные события и циклы MutationObserver.
+      if (field.value !== value) {
+        field.value = value;
+        field.dispatchEvent(new Event('input', { bubbles: true }));
+        field.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      if (pendingScroll) {
+        pendingScroll = false;
+        find('.yc-message').hidden = true;
+        if (typeof block.scrollIntoView === 'function') {
+          const reduceMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          block.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        }
+      }
+      return true;
+    };
     const render = () => {
       selected = plans[find('input:checked').value];
       const base = selected.count * plans[1].price;
@@ -117,6 +143,7 @@
       find('[data-discount]').textContent = money(saving);
       find('[data-discount-row]').hidden = saving === 0;
       find('.yc-message').hidden = true;
+      syncForm();
       // Сумма меняется сразу; анимация только мягко подчёркивает обновление.
       const total = find('[data-total]');
       if (animation) animation.cancel();
@@ -125,12 +152,27 @@
       }
     };
     inputs.forEach(input => input.addEventListener('change', render));
-    // Демонстрационная запись: показываем выбор, не отправляя данные.
+    // Кнопка заполняет штатное поле и прокручивает к форме, но не отправляет её.
     find('.yc-submit').addEventListener('click', () => {
-      const message = find('.yc-message');
-      message.textContent = 'Вы выбрали «' + selected.name + '»: ' + selected.label + ' за ' + money(selected.price) + '. Это демонстрация — заявка пока не отправляется.';
-      message.hidden = false;
+      pendingScroll = true;
+      if (!syncForm()) {
+        const message = find('.yc-message');
+        message.textContent = 'Форма записи пока недоступна. Попробуйте ещё раз чуть позже.';
+        message.hidden = false;
+      }
     });
+    // Tilda может добавить или переинициализировать поле после блока T123.
+    // Наблюдатель использует актуальный тариф и повторно находит поле при замене DOM.
+    if (typeof MutationObserver === 'function') {
+      const observer = new MutationObserver(() => { syncForm(); });
+      observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['id', 'name', 'type', 'value']
+      });
+    }
+    document.addEventListener('DOMContentLoaded', syncForm, { once: true });
     render();
   });
 })();
