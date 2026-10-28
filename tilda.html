@@ -60,6 +60,210 @@
 @media (max-width:800px) { .yoga-cost .yc-layout { grid-template-columns:1fr; gap:28px; } .yoga-cost .yc-summary { max-width:none; } .yoga-cost .yc-header-note { display:none; } .yoga-cost .yc-main { padding-top:38px; } }
 @media (max-width:480px) { .yoga-cost .yc-brand-note { margin-left:5px; font-size:10px; } .yoga-cost .yc-fieldset { grid-template-columns:1fr; gap:12px; } .yoga-cost .yc-plan-body { min-height:0; padding:20px; } .yoga-cost .yc-count { margin-top:10px; font-size:38px; } .yoga-cost .yc-plan-price { margin-top:15px; } .yoga-cost .yc-footer { flex-direction:column; gap:6px; } .yoga-cost .yc-lead br { display:none; } }
 @media (prefers-reduced-motion:reduce) { .yoga-cost .yc-plan-body, .yoga-cost .yc-submit { transition:none; } }
+
+/* Штатная форма Tilda: все правила ограничены согласованным блоком. */
+#rec5252905801 {
+  background-color: #f8f9f3;
+  color: #26392e;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#rec5252905801 #form5252905801 {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: clamp(20px, 4vw, 32px);
+  border: 1px solid #e1e6d9;
+  border-radius: 18px;
+  background: #eef1e8;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #26392e;
+}
+#rec5252905801 .t-form__inputsbox {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+#rec5252905801 .t-input-group {
+  box-sizing: border-box;
+  float: none;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 22px;
+}
+#rec5252905801 .t-input-title {
+  display: block;
+  margin-bottom: 8px;
+  color: #26392e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+/* Только эти две рамки и цвета имеют inline-значения в предоставленном HTML. */
+#rec5252905801 .t-input-group_nm .t-input,
+#rec5252905801 .t-input-phonemask__wrap {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-height: 54px;
+  border: 1px solid #b6c3ae !important;
+  border-radius: 8px;
+  background-color: #fcfcf8;
+  color: #26392e !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+#rec5252905801 .t-input-group_nm .t-input {
+  height: auto;
+  padding: 14px 16px;
+}
+/* Рамка телефона только на обёртке. Отступы маски и выбор страны не меняем. */
+#rec5252905801 .t-input-phonemask__wrap {
+  padding: 0;
+  overflow: visible;
+}
+#rec5252905801 .t-input-phonemask__wrap .t-input-phonemask {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  height: 52px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
+  color: #26392e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+#rec5252905801 .t-input-phonemask__select {
+  color: #26392e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+#rec5252905801 .t-input-group_nm .t-input::placeholder,
+#rec5252905801 .t-input-phonemask__wrap .t-input-phonemask::placeholder {
+  color: #626d5f;
+  opacity: 1;
+}
+#rec5252905801 .t-input-group_nm .t-input:focus-visible,
+#rec5252905801 .t-input-phonemask__wrap:focus-within {
+  outline: 3px solid #355c42;
+  outline-offset: 3px;
+}
+/* Внутренний фокус телефона обозначен общей рамкой :focus-within выше. */
+#rec5252905801 .t-input-phonemask__wrap .t-input-phonemask:focus {
+  outline: none;
+}
+/* Родной checkbox и его механизм переключения остаются без изменений. */
+#rec5252905801 .t-checkbox__control {
+  align-items: flex-start;
+  color: #465440;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+#rec5252905801 .t-checkbox__indicator {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  margin-right: 10px;
+  border: 1px solid #355c42;
+  border-radius: 4px;
+  background-color: #fcfcf8;
+  opacity: 1;
+}
+#rec5252905801 .t-checkbox__indicator::after {
+  border-color: #355c42;
+}
+#rec5252905801 .t-checkbox__control:focus-within .t-checkbox__indicator {
+  outline: 3px solid #355c42;
+  outline-offset: 3px;
+}
+/* Более точный селектор перекрывает встроенный CSS кнопки без !important. */
+#rec5252905801 #form5252905801 .t-btnflex.t-btnflex_type_submit {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-height: 52px;
+  height: auto;
+  padding: 16px 18px;
+  border-radius: 8px;
+  background-color: #FF8500;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: normal;
+  cursor: pointer;
+}
+#rec5252905801 #form5252905801 .t-btnflex_type_submit .t-btnflex__text {
+  font: inherit;
+  color: inherit;
+  overflow-wrap: anywhere;
+}
+#rec5252905801 #form5252905801 .t-btnflex.t-btnflex_type_submit:hover {
+  background-color: #FF8500;
+  color: #ffffff;
+}
+#rec5252905801 #form5252905801 .t-btnflex.t-btnflex_type_submit:focus-visible {
+  outline: 3px solid #355c42;
+  outline-offset: 4px;
+}
+#rec5252905801 .t-form__submit {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+/* Меняем оформление ошибок, но не display/visibility: ими управляет Tilda. */
+#rec5252905801 .t-input-error {
+  margin-top: 6px;
+  color: #a12622;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+#rec5252905801 .t-form__errorbox-wrapper {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 16px;
+  border: 1px solid #dbb9b0;
+  border-radius: 8px;
+  background: #fff3ee;
+  color: #a12622;
+  overflow-wrap: anywhere;
+}
+#rec5252905801 .t-form__errorbox-text {
+  margin: 0;
+  color: #a12622;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+#rec5252905801 .t-form__errorbox-wrapper:focus-visible {
+  outline: 3px solid #a12622;
+  outline-offset: 3px;
+}
+@media (max-width: 480px) {
+  #rec5252905801 #form5252905801 {
+    padding: 20px 16px;
+  }
+  #rec5252905801 .t-input-group {
+    margin-bottom: 18px;
+  }
+}
 </style>
 <!-- Калькулятор: все элементы и стили ограничены контейнером .yoga-cost. -->
 <section class="yoga-cost" aria-label="Калькулятор стоимости занятий йогой">
