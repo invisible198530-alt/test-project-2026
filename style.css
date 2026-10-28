@@ -119,9 +119,10 @@
   height: auto;
   padding: 14px 16px;
 }
-/* Рамка телефона только на обёртке. Отступы маски и выбор страны не меняем. */
-#rec5252905801 .t-input-phonemask__wrap {
-  padding: 0;
+/* Приоритет только для телефона: перекрываем inline-рамку и сохраняем геометрию маски Tilda. */
+#rec5252905801 #form5252905801 .t-input-phonemask__wrap {
+  border: 1px solid #b6c3ae !important;
+  border-radius: 8px !important;
   overflow: visible;
 }
 #rec5252905801 .t-input-phonemask__wrap .t-input-phonemask {
@@ -129,8 +130,7 @@
   width: 100%;
   min-width: 0;
   max-width: 100%;
-  height: 52px;
-  border: 0;
+  border: 0 !important;
   border-radius: 8px;
   background: transparent;
   box-shadow: none;
